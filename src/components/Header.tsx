@@ -8,7 +8,7 @@ export const Header = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative overflow-hidden bg-cyber-darker py-20 px-4 sm:px-6 lg:px-8 border-b border-neon-blue/30"
+      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 border-b border-neon-blue/30"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-blue/20 via-transparent to-transparent"></div>

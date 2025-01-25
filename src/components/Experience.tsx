@@ -31,9 +31,10 @@ export const Experience = () => {
   });
 
   return (
-    <section ref={ref} className="relative py-20 px-4 sm:px-6 lg:px-8 bg-cyber-dark border-b border-neon-pink/30">
+    <section ref={ref} className="relative py-20 px-4 sm:px-6 lg:px-8 border-b border-neon-pink/30">
+      <div className="absolute inset-0 bg-cyber-darker/30"></div>
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
