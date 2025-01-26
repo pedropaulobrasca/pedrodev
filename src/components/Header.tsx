@@ -23,7 +23,7 @@ export const Header = () => {
         >
           <Terminal className="w-12 h-12 text-neon-blue animate-glow-blue" />
           <h1 className="text-4xl sm:text-5xl font-bold glitch-text bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-pink to-neon-yellow">
-            Pedro Paulo Brasca
+            Pedro Paulo
           </h1>
         </motion.div>
 

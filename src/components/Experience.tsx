@@ -39,10 +39,10 @@ export const Experience = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-12"
+          className="flex items-center gap-2 sm:gap-4 mb-12 flex-wrap"
         >
-          <Terminal className="w-8 h-8 text-neon-pink animate-glow-pink" />
-          <h2 className="text-3xl font-bold text-white font-mono glitch-text">Experiência_Profissional.exe</h2>
+          <Terminal className="w-6 h-6 sm:w-8 sm:h-8 text-neon-pink animate-glow-pink shrink-0" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-mono glitch-text break-words">Experiência_Profissional.exe</h2>
         </motion.div>
 
         <div className="space-y-12">
