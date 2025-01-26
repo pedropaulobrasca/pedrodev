@@ -20,8 +20,8 @@ const projects = [
   },
   {
     title: 'Meus Gastos',
-    description: 'Aplicação web para controle de gastos pessoais, desenvolvida com Next.js.',
-    tech: ['Next.js', 'TypeScript', 'TailwindCSS'],
+    description: 'Aplicação web para controle de gastos pessoais, desenvolvida com Vite e no backend com Supabase.',
+    tech: ['Vite', 'TypeScript', 'Supabase'],
     github: 'https://github.com/pedropaulobrasca/meus-gastos',
     live: 'https://meus-gastos.pedrodev.com.br/'
   }
