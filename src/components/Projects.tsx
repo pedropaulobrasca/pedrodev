@@ -5,18 +5,25 @@ import { Code, Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Portfolio Cyberpunk',
+    title: 'Este Portfolio',
     description: 'Portfolio pessoal com tema cyberpunk desenvolvido com React, Framer Motion e TailwindCSS.',
     tech: ['React', 'TypeScript', 'Framer Motion', 'TailwindCSS'],
-    github: 'https://github.com/yourusername/portfolio',
-    live: 'https://yourportfolio.com'
+    github: 'https://github.com/pedropaulobrasca/pedrodev',
+    live: 'https://www.pedrodev.com.br/'
   },
   {
     title: 'Calculadora de Jobs Freela',
     description: 'Aplicação web para cálculo de valores de trabalhos freelance, desenvolvida com Next.js.',
     tech: ['Next.js', 'TypeScript', 'TailwindCSS'],
-    github: 'https://github.com/yourusername/freela-calc',
-    live: 'https://freela-calc.com'
+    github: 'https://github.com/pedropaulobrasca/freela-calc',
+    live: 'https://freela-calc.pedrodev.com.br/'
+  },
+  {
+    title: 'Meus Gastos',
+    description: 'Aplicação web para controle de gastos pessoais, desenvolvida com Next.js.',
+    tech: ['Next.js', 'TypeScript', 'TailwindCSS'],
+    github: 'https://github.com/pedropaulobrasca/meus-gastos',
+    live: 'https://meus-gastos.pedrodev.com.br/'
   }
 ];
 
