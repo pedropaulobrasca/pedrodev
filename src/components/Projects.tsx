@@ -23,7 +23,7 @@ const projects = [
     description: 'Aplicação web para controle de gastos pessoais, desenvolvida com Vite e no backend com Supabase.',
     tech: ['Vite', 'TypeScript', 'Supabase'],
     github: 'https://github.com/pedropaulobrasca/meus-gastos',
-    live: 'https://meus-gastos.pedrodev.com.br/'
+    live: 'https://gastos.pedrodev.com.br/'
   }
 ];
 
