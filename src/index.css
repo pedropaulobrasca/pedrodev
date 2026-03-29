@@ -3,15 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --neon-blue: theme('colors.neon.blue');
-    --neon-pink: theme('colors.neon.pink');
-    --cyber-black: theme('colors.cyber.black');
-    --cyber-darker: theme('colors.cyber.darker');
-  }
-
   body {
-    @apply bg-cyber-black text-white overflow-x-hidden;
+    @apply bg-surface-base text-text-primary overflow-x-hidden antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   #root {
@@ -19,141 +14,150 @@
   }
 }
 
-.cyberpunk-border {
-  position: relative;
-  border: 1px solid theme('colors.neon.blue');
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(60px) saturate(200%);
+    -webkit-backdrop-filter: blur(60px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
 
-.cyberpunk-border::before {
+.btn-chrome {
+  position: relative;
+  overflow: hidden;
+  color: #0A0A0A;
+  background: linear-gradient(
+    110deg,
+    #8B7119 0%,
+    #C9A227 12%,
+    #F5E6A3 25%,
+    #C9A227 37%,
+    #6B5A1A 50%,
+    #C9A227 62%,
+    #F5E6A3 75%,
+    #C9A227 87%,
+    #8B7119 100%
+  );
+  background-size: 200% 100%;
+  border: 1px solid rgba(232, 212, 139, 0.5);
+  box-shadow:
+    0 4px 24px rgba(201, 162, 39, 0.35),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  animation: chrome-flow 5s ease-in-out infinite;
+}
+
+.btn-chrome::before {
   content: '';
   position: absolute;
-  top: 5px;
-  right: -5px;
-  width: 100%;
-  height: 100%;
-  border: 1px solid theme('colors.neon.pink');
-  z-index: -1;
-}
-
-.scanline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 255, 255, 0.02) 50%
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 80% at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 60%
   );
-  background-size: 100% 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   pointer-events: none;
-  z-index: 50;
 }
 
-.glitch-text {
-  text-shadow: 
-    0.05em 0 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  animation: glitch 500ms infinite;
+.btn-chrome:hover::before {
+  opacity: 1;
 }
 
-@keyframes glitch {
-  0% {
-    text-shadow: 
-      0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  14% {
-    text-shadow: 
-      0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  15% {
-    text-shadow: 
-      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  49% {
-    text-shadow: 
-      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+.btn-chrome:hover {
+  box-shadow:
+    0 4px 32px rgba(201, 162, 39, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+@keyframes chrome-flow {
+  0%, 100% {
+    background-position: 0% center;
   }
   50% {
-    text-shadow: 
-      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  99% {
-    text-shadow: 
-      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-  100% {
-    text-shadow: 
-      -0.025em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    background-position: 100% center;
   }
 }
 
-.glitch-overlay {
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.1) 0px,
-    rgba(0, 0, 0, 0.1) 1px,
-    transparent 1px,
-    transparent 2px
+.hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    #F5F5F7 0%,
+    #F5F5F7 40%,
+    #E8D48B 50%,
+    #F5F5F7 60%,
+    #F5F5F7 100%
   );
-  animation: scan 8s linear infinite;
-  pointer-events: none;
-  z-index: 40;
+  background-size: 200% auto;
+  background-position: 200% center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s ease-in-out 2s infinite;
 }
 
-@keyframes scan {
-  from {
-    transform: translateY(-100%);
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 200% center;
   }
-  to {
-    transform: translateY(100%);
+  50% {
+    background-position: -200% center;
   }
 }
 
-.old-screen::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-  pointer-events: none;
-  z-index: 45;
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-chrome {
+    animation: none;
+  }
+
+  .hero-shimmer {
+    animation: none;
+    -webkit-text-fill-color: #F5F5F7;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-cyber-dark;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-blue/50 rounded-none;
-  border: 1px solid theme('colors.neon.pink');
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-blue/70;
+  background: rgba(255, 255, 255, 0.25);
 }

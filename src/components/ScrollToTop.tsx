@@ -1,29 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
-export const ScrollToTop = () => {
+export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    function toggleVisibility() {
+      setIsVisible(window.scrollY > 300);
+    }
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   return (
     <AnimatePresence>
@@ -33,13 +26,12 @@ export const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-cyber-darker border border-neon-blue 
-                   hover:border-neon-pink transition-colors duration-300 cursor-pointer
-                   group animate-glow-blue"
+          className="fixed bottom-6 right-6 z-50 p-3 glass rounded-full hover:bg-white/10 transition-all duration-300 cursor-pointer"
+          aria-label="Voltar ao topo"
         >
-          <ArrowUp className="w-6 h-6 text-neon-blue group-hover:text-neon-pink transition-colors duration-300" />
+          <ArrowUp className="w-4 h-4 text-text-secondary" strokeWidth={1.5} />
         </motion.button>
       )}
     </AnimatePresence>
   );
-};
+}
