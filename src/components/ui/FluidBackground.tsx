@@ -8,6 +8,9 @@ export function FluidBackground() {
     const video = videoRef.current;
     if (!video) return;
 
+    video.muted = true;
+    video.setAttribute('muted', '');
+
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
