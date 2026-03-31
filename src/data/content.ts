@@ -91,7 +91,7 @@ export const siteContent = {
 
   socialProof: {
     metrics: [
-      { value: '5+', label: 'Anos de experiencia' },
+      { value: '6+', label: 'Anos de experiencia' },
       { value: '3', label: 'Empresas atendidas' },
       { value: '19', label: 'Tecnologias dominadas' },
     ],

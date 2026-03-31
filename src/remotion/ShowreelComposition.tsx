@@ -85,7 +85,7 @@ function TerminalScene() {
   const OUTPUT = [
     { text: 'Pedro Brasca', color: BRAND.gold, bold: true },
     { text: 'FullStack Developer', color: BRAND.text, bold: false },
-    { text: '5+ anos de experiencia', color: BRAND.secondary, bold: false },
+    { text: '6+ anos de experiencia', color: BRAND.secondary, bold: false },
   ];
 
   const promptVisible = frame >= 0;
@@ -280,7 +280,7 @@ function StatsScene() {
   const { fps } = useVideoConfig();
 
   const stats = [
-    { value: '5+', label: 'Anos de experiencia' },
+    { value: '6+', label: 'Anos de experiencia' },
     { value: '3', label: 'Empresas atendidas' },
     { value: '19', label: 'Tecnologias dominadas' },
   ];
