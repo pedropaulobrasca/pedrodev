@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..900;1,6..96,500..700&family=Bricolage+Grotesque:opsz,wght@12..96,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0b0b0b;
+        --muted: #7c7c7c;
+        --line: #e3e3e3;
+        --paper: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+        font-size: 9.4pt;
+        line-height: 1.5;
+        width: 210mm;
+        min-height: 297mm;
+        padding: 16mm 17mm 14mm;
+      }
+
+      .eyebrow {
+        font-size: 7.4pt;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .name {
+        font-family: 'Bodoni Moda', Georgia, serif;
+        font-size: 38pt;
+        font-weight: 600;
+        line-height: 0.95;
+        letter-spacing: -0.015em;
+      }
+
+      .name em {
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      .role {
+        margin-top: 9pt;
+        font-size: 8.4pt;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--ink);
+      }
+
+      .mark {
+        font-size: 19pt;
+        line-height: 1;
+      }
+
+      .contact {
+        margin-top: 11pt;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5pt 16pt;
+        font-size: 8.4pt;
+        color: var(--ink);
+      }
+
+      .contact span {
+        color: var(--muted);
+      }
+
+      .rule {
+        height: 1px;
+        background: var(--line);
+        margin: 13pt 0 14pt;
+      }
+
+      /* Body grid */
+      .grid {
+        display: grid;
+        grid-template-columns: 1.62fr 1fr;
+        gap: 16mm;
+      }
+
+      .section + .section {
+        margin-top: 15pt;
+      }
+
+      .section-title {
+        font-size: 7.4pt;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+        padding-bottom: 7pt;
+        margin-bottom: 10pt;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .lead {
+        font-size: 10.4pt;
+        line-height: 1.55;
+      }
+
+      .lead strong {
+        font-weight: 600;
+      }
+
+      /* Experience */
+      .job + .job {
+        margin-top: 12pt;
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10pt;
+      }
+
+      .job-title {
+        font-family: 'Bodoni Moda', Georgia, serif;
+        font-size: 13pt;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .job-date {
+        font-size: 7.6pt;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .job-company {
+        font-size: 8.6pt;
+        font-weight: 600;
+        margin-top: 1pt;
+      }
+
+      .job-company span {
+        font-weight: 400;
+        color: var(--muted);
+      }
+
+      .job-desc {
+        margin-top: 5pt;
+        color: #2a2a2a;
+      }
+
+      .stack {
+        margin-top: 5pt;
+        font-size: 8pt;
+        color: var(--muted);
+      }
+
+      .stack b {
+        color: var(--ink);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 7pt;
+      }
+
+      /* Sidebar */
+      .skill-group + .skill-group {
+        margin-top: 9pt;
+      }
+
+      .skill-label {
+        font-size: 7pt;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+      }
+
+      .skill-list {
+        margin-top: 2pt;
+        font-size: 9pt;
+        line-height: 1.45;
+      }
+
+      .edu-school {
+        font-family: 'Bodoni Moda', Georgia, serif;
+        font-size: 11.5pt;
+        font-weight: 600;
+      }
+
+      .edu-meta {
+        font-size: 8pt;
+        color: var(--muted);
+        margin-top: 1pt;
+      }
+
+      .seeking {
+        font-size: 8.6pt;
+        line-height: 1.5;
+      }
+
+      footer {
+        margin-top: 14pt;
+        padding-top: 9pt;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        font-size: 7.2pt;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="name">Pedro <em>Brasca</em></div>
+        <div class="role">Desenvolvedor Fullstack &middot; Back-end</div>
+      </div>
+      <div class="mark">&#10037;</div>
+    </header>
+
+    <div class="contact">
+      <div>Taubaté, SP <span>· Brasil</span></div>
+      <div>pedropaulobrasca@gmail.com</div>
+      <div>(12) 99718-3660</div>
+      <div>github.com/pedropaulobrasca</div>
+      <div>linkedin.com/in/pedro-brasca</div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="grid">
+      <main>
+        <div class="section">
+          <p class="lead">
+            Desenvolvedor Fullstack com <strong>6+ anos</strong> construindo produtos
+            digitais, com foco em back-end. Da arquitetura ao deploy: APIs, integrações
+            e interfaces sob medida, guiado por <strong>Clean Architecture</strong>,
+            <strong>SOLID</strong> e código sustentável.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Experiência</div>
+
+          <div class="job">
+            <div class="job-head">
+              <div class="job-title">Desenvolvedor Fullstack</div>
+              <div class="job-date">jun 2022 — atual</div>
+            </div>
+            <div class="job-company">Tinnova <span>· Tempo integral</span></div>
+            <div class="job-desc">
+              Desenvolvimento full-stack com foco em back-end: evolução de novas
+              features, otimização de performance e estabilidade contínua do produto.
+            </div>
+            <div class="stack">
+              <b>Stack</b> &nbsp;Node.js · TypeScript · JavaScript · Express · Sequelize ·
+              Angular · Kotlin · PostgreSQL · MySQL · Docker · Git · Heroku · Jira
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div class="job-title">Analista de Sistemas</div>
+              <div class="job-date">mar 2021 — jun 2022</div>
+            </div>
+            <div class="job-company">B2ML Sistemas <span>· Tempo integral</span></div>
+            <div class="job-desc">
+              Back-end em Node.js, TypeScript, Express e NestJS sobre bases MySQL.
+              Frentes de front-end em Angular e React.
+            </div>
+            <div class="stack">
+              <b>Stack</b> &nbsp;Node.js · TypeScript · Express · NestJS · MySQL · Angular · React
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div class="job-title">Desenvolvedor Web</div>
+              <div class="job-date">fev 2020 — mar 2021</div>
+            </div>
+            <div class="job-company">Thompson Management Horizons <span>· Estágio · Taubaté</span></div>
+            <div class="job-desc">Desenvolvimento full-stack em PHP e MySQL.</div>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div class="job-title">Desenvolvedor Web</div>
+              <div class="job-date">dez 2019 — fev 2020</div>
+            </div>
+            <div class="job-company">Virtua Brasil <span>· Estágio · Taubaté</span></div>
+            <div class="job-desc">Desenvolvimento full-stack em PHP e MySQL.</div>
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="section">
+          <div class="section-title">Competências</div>
+          <div class="skill-group">
+            <div class="skill-label">Back-end</div>
+            <div class="skill-list">Node.js · TypeScript · JavaScript · Express · NestJS · Sequelize</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Front-end</div>
+            <div class="skill-list">React · Angular</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Dados</div>
+            <div class="skill-list">PostgreSQL · MySQL</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Cloud &amp; DevOps</div>
+            <div class="skill-list">AWS · Docker · Git · Heroku</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Arquitetura</div>
+            <div class="skill-list">Clean Architecture · SOLID · SDD</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Formação</div>
+          <div class="edu-school">Universidade Paulista</div>
+          <div class="edu-meta">Taubaté, SP</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Foco atual</div>
+          <div class="seeking">
+            Vagas de Desenvolvedor Back-end, Desenvolvedor JavaScript e Engenheiro
+            de Software.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Idiomas</div>
+          <div class="skill-list">Português — Nativo</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <span>Pedro Brasca</span>
+      <span>Currículo · 2026</span>
+    </footer>
+  </body>
+</html>
